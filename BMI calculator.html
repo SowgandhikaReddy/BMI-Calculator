@@ -1,0 +1,74 @@
+<html>
+<link rel="stylesheet" href="h1.css">
+<head>
+
+<script>
+var array=[];
+function rv()
+{
+ array[0]=document.f1.w.value;
+ array[1]=document.f1.h.value;
+}
+function bmicheck(){
+rv();
+var len=array.length,i;
+let j;
+i=array[1]*array[1];
+i=i/10000;
+j=array[0]/i;
+j=j.toFixed(2);
+document.getElementById("demo1").innerHTML="BMI is:"+j;
+if(j<18.5){
+document.getElementById("demo2").innerHTML="Under weight";
+
+}
+else if(j>25){
+document.getElementById("demo2").innerHTML="Over weight";
+
+}
+
+else
+{
+document.getElementById("demo2").innerHTML="Normal";
+
+}
+}
+</script>
+</head>
+<h1><b>BMI</b>
+</h1>
+<body>
+<table align="center">
+<form name="f1">
+<tr><td><label>
+<h2><b>Weight:</b><input id="w" type="text" placeholder="Enter the Weight in kg" name="Weight"><br><br></h2>
+</td>
+</tr>
+<tr><td>
+<h2><b>Height :  </b><input id="h" type="text" placeholder="Enter the Height in cm" name="Height"><br><br></h2></td></tr>
+<tr><td>
+<h2><b>Age :        </b><input id="a" type="text" placeholder="Enter the Age" name="Age"><br><br></h2></td></tr>
+<tr><td>
+<h2>
+<label><b>Select your gender</b></label>
+<select name="gender">
+	<option value="none" selected>Gender</option>
+	<option value="male">Male</option>
+	<option value="female">Female</option>
+	<option value="other">other</option>
+</select><br><br><br>
+</h2>
+</td></tr>
+<tr><td>
+</table>
+<br><br>
+<center>
+<button type="button"  onclick="bmicheck()">submit</button>
+<p id= "demo1"></p>
+<p id= "demo2"></p>
+
+</center>
+</form>
+
+</body>
+</html>
